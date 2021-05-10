@@ -1,0 +1,425 @@
+%==============================================================================
+%|| Beamer style for the poster template
+%||
+%||	note: custom blocks are rendered with tcolorbox
+%||				not efficient! Rewrite thi configuration file using 
+%||       http://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/tcolorbox/tcolorbox-tutorial-poster.pdf in the future all the poster can be 
+%||
+%|| Credit for the original template to: 
+%||   Nathaniel Johnston (nathaniel@nathanieljohnston.com)
+%||   Computational Physics and Biophysics Group at Jacobs University
+%||   https://teamwork.jacobs-university.de:8443/confluence/display/CoPandBiG/LaTeX+Poster
+% =============================================================================
+
+\ProvidesPackage{beamerthemeSuper19}
+\RequirePackage{tikz}		% for drawing the nice rounded boxes
+\usetikzlibrary{arrows,backgrounds}
+
+\usepackage{exscale}
+\RequirePackage{textcomp}
+\RequirePackage{amsmath,amssymb}
+
+
+% Fonts
+%\RequirePackage[T1,euler-digits,euler-hat-accent]{eulervm}
+\renewcommand{\familydefault}{\sfdefault}
+\RequirePackage{amsfonts}
+
+
+% https://ctan.org/pkg/tcolorbox
+\RequirePackage[most]{tcolorbox}
+
+%-----------------------------------------------------------
+% Poster Settings
+%-----------------------------------------------------------
+\newcommand{\makeruleinbox}{{\usebeamercolor[bg]{block alerted title}\centering\hspace*{-0.7cm}\rule{\inboxrule}{0.5cm}}}
+\usepackage{ragged2e}
+
+% Spacing before and inside list environments to add white space before lists and between items inside lists
+\makeatletter
+\def\@listi{\leftmargin\leftmarginii
+\topsep 1ex % Spacing before lists
+\parsep 0\p@ \@plus\p@
+\itemsep 6pt} % Spacing between items
+\makeatother
+
+\usecaptiontemplate{\small\structure{\insertcaptionname~\insertcaptionnumber: }\insertcaption} % A fix for figure numbering
+
+
+% Footnotes
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  \hrule width .8\textwidth height 1pt
+  \kern 2pt
+}
+
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwidinternal}
+\newlength{\sepwidexternal}
+\newlength{\onecolwid}
+\setlength{\sepwidexternal}{0.01\paperwidth} % Separation width (white space) between columns
+\setlength{\sepwidinternal}{2\sepwidexternal} % Separation width (white space) between column and border
+\setlength{\onecolwid}{0.48\paperwidth} % Width of one column
+\setlength{\topmargin}{-1.2in} % Reduce the top margin size
+%-----------------------------------------------------------
+
+
+
+
+
+%-----------------------------------------------------------
+% Define a whole bunch of custom colours and fonts
+%-----------------------------------------------------------
+\definecolor{lgreen} {RGB}{180,210,100}
+\definecolor{dblue}  {RGB}{20,66,129}
+\definecolor{ddblue} {RGB}{11,36,69}
+\definecolor{lred}   {RGB}{220,0,0}
+\definecolor{nred}   {RGB}{224,0,0}
+\definecolor{norange}{RGB}{230,120,20}
+\definecolor{nyellow}{RGB}{255,221,0}
+\definecolor{ngreen} {RGB}{98,158,31}
+\definecolor{dgreen} {RGB}{78,138,21}
+\definecolor{nblue}  {RGB}{28,130,185}
+\definecolor{jblue}  {RGB}{20,50,100}
+\definecolor{lincolngreen}{rgb}{0.11, 0.35, 0.02}
+
+
+% set background color
+\setbeamercolor{background canvas}{bg=nblue!30!white}
+
+% set the basic colors
+\setbeamercolor{palette primary}   {fg=black,bg=white}
+\setbeamercolor{palette secondary} {fg=black,bg=white}
+\setbeamercolor{palette tertiary}  {bg=jblue,fg=white}
+\setbeamercolor{palette quaternary}{fg=black,bg=white}
+\setbeamercolor{structure}{fg=jblue}
+\setbeamercolor{titlelike}         {bg=jblue,fg=white}
+\setbeamercolor{frametitle}        {bg=jblue!10,fg=jblue}
+\setbeamercolor{cboxb}{fg=black,bg=jblue}
+\setbeamercolor{cboxr}{fg=black,bg=red}
+
+% set colors for itemize/enumerate
+\setbeamercolor{item}{fg=nblue}
+\setbeamercolor{item projected}{fg=white,bg=nblue}
+
+% set colors for blocks
+\setbeamercolor{block title}{fg=jblue,bg=white} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+
+% set colors for alerted blocks (blocks with frame)
+\setbeamercolor{block alerted title}{fg=white,bg=jblue!70} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=jblue!10} % Colors of the body of highlighted blocks
+
+
+
+
+
+% set the fonts
+\setbeamerfont{section in head/foot}{series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamerfont{block alerted title}{series=\bfseries}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{frametitle}{size=\Large}
+\setbeamerfont{block body}{series=\sffamily}
+
+% set some beamer theme options
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{blocks}[width=0.0]
+\beamertemplatenavigationsymbolsempty
+
+% set bibliography style
+\setbeamertemplate{bibliography item}[text]
+\setbeamercolor{bibliography item}{fg=black,bg=white}
+\setbeamercolor{bibliography entry author}{fg=black,bg=white}
+\setbeamercolor{bibliography item}{fg=black,bg=white}
+
+% define some length variables that are used by the template
+\newlength{\inboxwd}
+\newlength{\iinboxwd}
+\newlength{\inboxrule}
+\makeatletter
+\makeatother
+
+
+%==============================================================================
+% Poster title
+%==============================================================================
+\setbeamertemplate{headline}{
+ \leavevmode
+  \begin{columns}
+   \begin{column}{.15\linewidth}
+   	\centering
+    \includegraphics[width=0.8\linewidth]{./Logos/UCSC_logo}
+   \end{column}
+   \begin{column}{.7\linewidth}
+    %\vskip1cm
+   	\begin{block}{
+ 	  	\usebeamercolor{title in headline}{\vspace{1em}\color{jblue}\Huge{\textbf{\inserttitle}}\\[0.5ex]}}
+   	\centering
+   	\usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[1ex]}
+    \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}
+    \vspace{0.5em}
+   	\end{block}
+   \end{column}
+   \begin{column}{.15\linewidth}
+    \centering
+    \includegraphics[width=1\linewidth]{./Logos/KULeuven_logo}
+   \end{column}
+   \vspace{1cm}
+  \end{columns}
+ %\vspace{0.25in}
+%\hspace{0.5in}
+ \begin{beamercolorbox}[wd=47in,colsep=0.15cm]{cboxb}\end{beamercolorbox}
+ %\vspace{0.05in}
+}
+
+
+%==============================================================================
+% Theme  Blocks 
+%==============================================================================
+% Basic block, intended as subsections of the poster
+\setbeamertemplate{block begin}
+{
+  \par\vskip\smallskipamount
+  \begin{tcolorbox}[size=minimal,left=.5em,right =.5em]
+  \begin{beamercolorbox}[colsep*=0ex,dp={2ex},center]{block title}
+    \vskip-0.25cm
+    \usebeamerfont{block title}\large\insertblocktitle
+    \begin{flushleft}
+    \vspace{-1.8em}
+    \begin{tikzpicture}[remember picture,overlay]
+      \shade [inner color=gray,outer color=white]
+      (0,0) rectangle (\textwidth,0.3cm);
+    \end{tikzpicture}
+    \end{flushleft}
+  \end{beamercolorbox}
+  {\parskip0pt\par}
+  \ifbeamercolorempty[bg]{block title}
+  {}
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}
+  \usebeamerfont{block body}
+  \vskip-0.5cm
+  \justifying
+}
+
+\setbeamertemplate{block end}
+{
+	\end{tcolorbox}
+  \vskip\medskipamount
+}
+
+% Alert block definition (with frame)
+\setbeamertemplate{block alerted begin}
+{
+  \par\vskip\medskipamount
+  \begin{beamercolorbox}[sep=0ex,rounded=true,center,dp={2ex}]{block alerted title}
+    \vskip0.01cm
+    \usebeamerfont{block title}\large\insertblocktitle
+  \end{beamercolorbox}
+  {\parskip0pt\par}
+  \usebeamerfont{block body}
+  \vskip-0.8cm
+  \begin{beamercolorbox}[sep=0.5cm, rounded=true,center]{block alerted title}
+  \setlength{\inboxwd}{\linewidth}
+  \addtolength{\inboxwd}{-1cm}
+  \begin{beamercolorbox}[rounded=true,wd={\inboxwd},center]{block alerted body}
+  \setlength{\iinboxwd}{\inboxwd}
+  \setlength{\inboxrule}{\inboxwd}
+  \addtolength{\iinboxwd}{-0.5cm}
+  \addtolength{\inboxrule}{0.5cm}
+  \begin{center}
+  \begin{minipage}{\iinboxwd}
+  \justifying
+}
+
+\setbeamertemplate{block alerted end}
+{
+  \end{minipage}
+  \end{center}
+  \end{beamercolorbox}
+  \end{beamercolorbox}
+  \vskip\smallskipamount
+}
+
+
+
+
+%==============================================================================
+% footline
+%==============================================================================
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  		\hspace{.78\paperwidth}
+  		\begin{tcolorbox}[size=minimal,colback=yellow!60!white,left=.5em,right =.5em]{Contacts:}%
+    	\qquad \href{https://dmf.unicatt.it/miti/}{\Mundus~ https://dmf.unicatt.it/miti/} 
+    	\qquad \href{mailto:am.miti@dmf.unicatt.it}{\Letter~ am.miti@dmf.unicatt.it}
+  		\end{tcolorbox}
+
+ 	}%
+  \vskip0pt%
+}
+
+
+%==============================================================================
+% Personalized  Blocks (newtcolorbox)
+%==============================================================================
+\newtcolorbox{defblock}[1][]{
+	colback=nred!5!white,
+	colframe=nred!75!black,
+	fonttitle=\bfseries,
+	%colback=white,
+	%colbacktitle=white,
+	%coltitle=red!70!black,
+	%colframe=red!70!black,
+	boxrule=3pt,
+	titlerule=1pt,
+	%arc=15pt,
+	left skip=0.2em, right skip=0.2em,
+	%enlarge left by=-1em,width=\linewidth+1.5em, %box horizontal size
+	left=0.2em,right=0.2em,top=0.1em,bottom=0.1em, %text spacing
+	toptitle=-0.1em,bottomtitle=-0.1em, %title spacing
+	title={\center{ Def: \strut#1}}
+}
+
+\newtcolorbox{propblock}[1][]{
+	colback=nblue!5!white,
+	colframe=nblue!75!black,
+	fonttitle=\bfseries,
+	%colback=white,
+	%colbacktitle=white,
+	%coltitle=red!70!black,
+	%colframe=red!70!black,
+	boxrule=3pt,
+	titlerule=1pt,
+	%arc=15pt,
+	left skip=0.2em, right skip=0.2em,
+	%enlarge left by=-1em,width=\linewidth+1.5em, %box horizontal size
+	left=0.2em,right=0.2em,top=0.1em,bottom=0.1em, %text spacing
+	arc=15pt,
+	title={\center{ Prop: \strut#1}}
+}
+
+% Credit: https://tex.stackexchange.com/questions/431555/tcolorbox-with-title-on-the-left-side
+\newtcolorbox{keywordblock}[1][]{
+ enhanced,
+    coltitle=black, 
+    detach title,
+    left=10mm,
+ 		titlerule=0pt,
+		%arc=15pt,
+		%enlarge left by=-1cm,width=\linewidth+2cm, %box vertical size
+		left=0em,right=0em,top=0em,bottom=0em, %text spacing
+		toptitle=-0.5em,bottomtitle=-0.5em, %title spacing
+		title=keywords,
+		detach title,
+    left=10mm,
+    overlay={
+        \node[rotate=90, minimum width=1cm, anchor=south,yshift=-0.8cm] at (frame.west) {\tcbtitle};
+    }    
+}
+
+\newtcolorbox{asideblock}[1][]{
+    enhanced,
+	colback=white,
+	colbacktitle=white,
+	coltitle=brown!70!black,
+	colframe=brown!70!black,
+	%boxrule=1pt,
+	titlerule=0pt,
+	%arc=15pt,
+	%enlarge left by=-1cm,width=\linewidth+2cm, %box vertical size
+	left=0em,right=0em,top=0em,bottom=0em, %text spacing
+	toptitle=-0.25em,bottomtitle=-0.5em, %title spacing
+	leftrule=18pt,
+  title={\centering \strut#1},
+  overlay unbroken and first ={%
+    \node[rotate=90,
+          minimum width=1cm,
+          anchor=south,
+          font=\Large\sffamily\bfseries,
+          yshift=-18pt,
+          white]
+    at (frame.west) {(aside)};
+  }	
+}
+
+
+
+\newtcolorbox{claimblock}[1][Def:]{
+    enhanced,
+	colback=white,
+	colbacktitle=white,
+	coltitle=blue!70!black,
+	colframe=blue!70!black,
+	%boxrule=1pt,
+	titlerule=0pt,
+	%arc=15pt,
+	%enlarge left by=-1cm,width=\linewidth+2cm, %box vertical size
+	left=0em,right=0em,top=0em,bottom=0em, %text spacing
+	toptitle=-0.5em,bottomtitle=-0.5em, %title spacing
+	title={Claim:},
+	detach title,
+    left=13mm,
+    overlay={
+        \node[minimum width=1cm,xshift=0.8cm] at (frame.west) {\tcbtitle};
+    }
+}
+
+
+\newtcolorbox{proofblock}{
+	colframe=blue!75!black
+}
+
+\newtcolorbox{tamblock}[1][Def:]{
+    enhanced,
+	colback=white,
+	colbacktitle=white,
+	coltitle=purple!70!black,
+	colframe=purple!70!black,
+	%boxrule=1pt,
+	titlerule=0pt,
+	%arc=15pt,
+	%enlarge left by=-1cm,width=\linewidth+2cm, %box vertical size
+	left=0em,right=0em,top=0em,bottom=0em, %text spacing
+	toptitle=-0.5em,bottomtitle=-0.5em, %title spacing
+	title={TAM},
+	detach title,
+    left=10mm,
+    overlay={
+        \node[rotate=90, minimum width=1cm, anchor=south,yshift=-0.8cm] at (frame.west) {\tcbtitle};
+    }
+}
+
+\newtcolorbox{upshotblock}[1][Def:]{
+    enhanced,
+	colback=white,
+	colbacktitle=white,
+	coltitle=purple!50!black,
+	colframe=purple!50!black,
+	%boxrule=1pt,
+	titlerule=0pt,
+	%arc=15pt,
+	%enlarge left by=-1cm,width=\linewidth+2cm, %box vertical size
+	left=0em,right=0em,top=0em,bottom=0em, %text spacing
+	toptitle=-0.5em,bottomtitle=-0.5em, %title spacing
+	title={Upshot},
+	detach title,
+    left=10mm,
+    overlay={
+        \node[rotate=90, minimum width=1cm, anchor=south,yshift=-0.8cm] at (frame.west) {\tcbtitle};
+    }
+}
+
+

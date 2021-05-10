@@ -1,0 +1,85 @@
+%+------------------------------------------------------------------------------------------------------------------------+
+%| Abstract: Poster on my research project "Differential geometry and applications to modern physics"		|
+%| Author: Antonio Michele miti
+%| Event: Supergeometry, supersymmetry and quantization
+%| Place: University of Luxembourg
+%| Date:	December 16-19, 2019, 
+%| Note: This poster was intended as a short survey on the main results
+%|			of my doctoral research project, together with some background 
+%|			material.
+%|			The first aim is to give a schematic account on $n$-plectic structures (also called \emph{multisymplectic}) and the generalization of moment maps to this setting called \emph{homotopy co-momentum map}.
+%| 
+%+-----------------------------------------------------------------------------------------------------------------------+
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{fancyhdr}
+%\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{savetrees}
+
+
+
+
+\begin{document}
+
+\title{Homotopy co-momentum maps in Multisymplectic geometry.}
+\author{Antonio Michele Miti\\ UCSC Brescia \& KU Leuven}
+
+\date{December 18, 2019}
+\maketitle
+
+
+\begin{abstract}
+
+
+% Introductory part, copied almost verbatim from the paper with Leo!
+\emph{Multisymplectic structures} (also called \emph{``$n$-plectic''}) are a rather straightforward generalization of symplectic ones where closed non-degenerate 
+($n$+$1$)-forms replace $2$-forms.
+\\
+Historically, the interest in multisymplectic manifolds, i.e. smooth manifolds equipped with an $n$-plectic structure,  has been motivated by
+the need of understanding the geometrical foundations of first-order classical field theories.
+%The key point is that, just as one can associate a symplectic manifold to an ordinary classical mechanical system (e.g. a single point-like particle constrained to some manifold), it is possible to associate a multisymplectic manifold to any classical field system (e.g. a continuous medium like a filament or a fluid).
+%It is important to stress that mechanical systems are not the only source of inspiration for instances of this class of structures. For example, any oriented $n$-dimensional manifold can be considered $(n-1)$-plectic when equipped with a volume form and semisimple Lie groups have a natural interpretation as $2$-plectic manifolds.
+
+As proposed by Rogers in \cite{Rogers2010} (see also \cite{Zambon2012}), this generalization can be expanded by introducing a higher analogue of the Poisson algebra of smooth functions (also known as ``\emph{observable algebra}'')  to the multisymplectic case.
+Namely, Rogers proved that the algebraic structure encoding the observables on a multisymplectic manifold is the one of an $L_{\infty}$-algebra, that is, a graded vector space endowed with skew-symmetric multilinear brackets satisfying the Jacobi identity up to coherent homotopies.
+\\
+The latter structure allowed for a natural extension of the notion of moment map, called ``\emph{homotopy comoment map}'' (HCMM), originally defined in \cite{Callies2016}, associated to an infinitesimal action of a Lie group on a manifold preserving the multisymplectic form. Remarkably, to this moment map is also associated a suitable notion of conserved momenta \cite{Ryvkin2016}.
+%
+Being this concept particularly subtle and technical, finding new and meaningful examples represent an interesting and valuable task.
+
+The goal of this presentation is to briefly review these ideas together with some new explicit constructions worked in full details in our research.
+\\
+% Spera Paper
+A first result is the explicit expression of a HCMM pertaining to volume-preserving diffeomorphisms acting on oriented Riemannian manifolds. In the case of the standard Euclidean 3-dimensional spaces, this map transgresses to the standard hydrodynamical co-momentum map of Arnol’d, Marsden and Weinstein. It also enjoys interesting relations with the covariant phase space of ideal fluids (with linked vortices) and  (Massey) higher-order linking numbers.\cite{Miti2018} 
+\\
+% Leo Paper
+Secondly, we present a complete classification for compact effective group actions on spheres together with some explicit constructions of HCMM in interesting particular cases.\cite{Miti2019} 
+\\
+%Zambon paper
+At last,  we consider the higher analogue of the embedding of the 2-plectic algebra of observables into the corresponding twisted Courant algebroid
+showing that such morphism satisfies a well-behaving condition under gauge-transformations when a HCMM exists.\cite{Mitia}
+
+Overall, this is joint work with Mauro Spera, Leonid Ryvkin and Marco Zambon.
+
+
+
+ 
+\end{abstract}
+
+
+
+
+%------------------------------------------------------------------------------------------------
+% Bibliography (BibTex)
+% https://arxiv.org/hypertex/bibstyles/
+%------------------------------------------------------------------------------------------------
+			\nocite{*}
+			\bibliographystyle{ieeetr}
+			\bibliography{biblio}
+%------------------------------------------------------------------------------------------------
+
+\end{document}
+
+

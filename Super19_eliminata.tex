@@ -1,0 +1,227 @@
+%+----------------------------------------------------------------------------+
+%| Poster: relevant background of my research project "Differential geometry and applications to modern physics"
+%| Author: Antonio miti
+%| Event: Supergeometry, supersymmetry and quantization
+%| Place: University of Luxembourg
+%| Date: December 16-19, 2019
+%| Template Credits: https://www.latextemplates.com/template/jacobs-landscape-poster
+%| 
+%+----------------------------------------------------------------------------+
+
+
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[final,a0paper,20pt,
+						pdftex,
+            pdfauthor={Antonio Michele Miti},
+            pdftitle={Homotopy title},
+            pdfsubject={Poster for the conference Super19 in Luxemburg},
+            pdfkeywords={Some Keywords},
+            pdfproducer={Latex with hyperref, or other system},
+            pdfcreator={pdflatex, or other tool}
+            ]{beamer}
+
+\usepackage{amsmath,amssymb,amsfonts}
+
+
+
+\usepackage[orientation=portrait, size=a0, scale=1.2]{beamerposter}
+\usetheme{Super19} % Use the confposter theme supplied with this template
+\usepackage{graphicx} 
+\usepackage{marvosym, fourier-orns, fontawesome} %funny icons
+\usepackage[mode=buildnew,subpreambles]{standalone}
+\usepackage{tikz,tikz-cd}
+\usepackage{caption}
+\usepackage{empheq}
+
+%-----------------------------------------------------------
+% Some shortcut
+%-----------------------------------------------------------
+\newcommand{\pinned}[1]{
+    \faThumbTack 
+    \hfill
+    %\hspace*{\fill} 
+    #1
+    \hfill \faThumbTack
+    \\
+    }
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\title{Multisymplectic manifolds and Homotopy co-momentum maps} 
+\author{Antonio Michele Miti}
+\institute{	
+				Department of Mathematics and Physics, 	Universit\`{a} Cattolica del Sacro Cuore, Brescia, Italy
+				\\
+				Department of Mathematics, KU Leuven, Leuven, Belgium
+				}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+%*************************************************************************
+\iffalse			\section{ DEBRIS }					\fi%*******************************
+%*************************************************************************
+\begin{frame}[t,shrink]
+\begin{columns}
+\begin{column}{\sepwidexternal}\end{column} % Empty spacer column
+	\begin{column}{\onecolwid}
+
+		\begin{block}{cose}
+			If the infinitesimal action $v$ is multisymplectic with respect to $\omega$ and $\tilde{\omega}$, 
+			it admits a HCMM $(f):\mathfrak{g}\to L_\infty(M,\omega)$ with respect to $\omega$,
+			and $B$ is strictly conserved,
+			then the $L_\infty$-morphism $(\tilde{f}):\mathfrak{g}\to L_\infty(M,\tilde{\omega})$
+			, given in components by
+			Bluff!!!
+			\begin{displaymath}
+				\varphi_{k+1} =  \frac{B_k}{c_k} 
+				\underbrace{\langle\cdot,\cdot\rangle_-\circ\dots\circ\langle\cdot,\cdot\rangle_-}_{k ~\text{times}}
+			\end{displaymath}
+		\end{block}
+	
+		\begin{block}{altre cose}
+			\url{https://commons.wikimedia.org/wiki/File:Displacement_of_a_continuum.svg}
+
+			\center \danger Several ways to introduce this concept... \danger
+			\includestandalone[width=0.6\textwidth]{Pictures/Linfinity_keywords}	
+		\end{block}	
+	\end{column}
+	%----------------------------------------------------------------------------------------
+	\begin{column}{\sepwidinternal}\end{column} % Empty spacer column	
+	\begin{column}{\onecolwid}
+
+		%+---------------------------------+
+		%| Contacts                        |
+		%+---------------------------------+
+		\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
+		\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+		\vspace{1cm}
+		\begin{alertblock}{Contact Information}
+		\small
+		\begin{center}
+			\begin{tabular}{c c c c}
+				Contacts\quad: 
+				&\ComputerMouse $\;$ 
+				&  \href{https://dmf.unicatt.it/miti/}{https://dmf.unicatt.it/miti/} 
+				& $\;$ \ComputerMouse 
+				\\
+				&\Letter $\;$ 
+				& \href{mailto:am.miti@dmf.unicatt.it}{am.miti@dmf.unicatt.it} 
+				& $\;$ \Letter
+			\end{tabular}		
+		\end{center}
+			Contacts: \qquad \href{https://dmf.unicatt.it/miti/}{\Mundus~ https://dmf.unicatt.it/miti/} \qquad 
+			\href{mailto:am.miti@dmf.unicatt.it}{\Letter~ am.miti@dmf.unicatt.it}.
+		\end{alertblock}
+
+		%+---------------------------------+
+		%| Bibliography                    |
+		%+---------------------------------+
+		\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
+		\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+		\vspace{1cm}
+		\begin{alertblock}{Bibliography}
+			\nocite{*}
+			\bibliographystyle{plain}
+			\footnotesize
+			\bibliography{biblio}
+		\end{alertblock}
+		
+		\begin{block}{Goals}
+			Multisymplectic manifolds, $L_\infty$ observables and homotopy co-moment maps are an higher generalization of symplectic manifolds, Poisson algebras and co-moment maps respectively.
+			\\
+			Being the latter a particularly subtle and technical concept, we worked out some new meaningful examples of possible interests in different fields of mathematics.
+			
+			\flushright
+			\begin{tabular}{p{0.25\linewidth}p{0.4\linewidth}p{0.25\linewidth}}
+				\faMapSigns Contents:
+				& \rotatebox[origin=c]{90}{\faMailReply} 
+				Relevant background
+				& New results \reflectbox{\rotatebox[origin=c]{90}{\faMailReplyAll}}
+			\end{tabular}		
+		
+		\end{block}
+
+		\begin{block}{Icons}
+			Awesome:\\
+			\faGlobe
+			\faAnchor
+			\faEnvelope
+			\faEnvelopeO
+			\faEnvelopeSquare
+			\faMailForward
+			\faMailReply
+			\faMailReplyAll
+			\faPaperclip
+			\faRotateLeft
+			\faRotateRight
+			\faThumbTack
+			\faLevelDown
+			\faArrowDown
+			\faPhone
+			
+			Marvosym:\\
+			\ComputerMouse \SerialInterface \Keyboard
+			\MVAt \Mundus
+			
+			Fourier:\\
+			\noway 
+			\danger
+			\textxswup \textxswdown
+			\lefthand \righthand \decosix \bomb
+		
+			Rotation:\\
+			\rotatebox[origin=c]{90}{\faMailReply}
+			\reflectbox{\rotatebox[origin=c]{90}{\faMailReplyAll}}
+		\end{block}
+
+
+\end{column} % End of column 2.1
+\begin{column}{\sepwidexternal}\end{column} % Empty spacer column
+\end{columns} % End of all the columns in the poster
+\end{frame}		
+
+
+consider two $B$-related $n$-plectic forms. There exists a bundle morphism
+\begin{displaymath}
+{
+	\begin{tikzcd}[column sep= small,row sep=0ex,
+				/tikz/column 1/.append style={anchor=base east}]
+		\tau_B \colon &
+		E^n = TM \oplus \Lambda^{n-1} T^\ast M \ar[r]& E^n ~, \\
+	 &\binom{X}{\alpha} \ar[r, mapsto] & 
+	 \binom{X}{\alpha - \iota_X B} =
+ \binom{X}{\alpha} - \binom{0}{\iota_X B}
+	\end{tikzcd}		
+}
+	 ~,		
+\end{displaymath}
+from the corresponding standard Vinogradov algebroid into itself
+
+					Consider $\alpha_i \in \Omega_{\text{Ham}}^{n-1}$,
+					$\gamma_i \in \bigoplus_{i=0}^{n-2}\Omega^n$
+					Denote $ x_i = v_{\alpha_i}$, $e_i = \alpha_i + \gamma_i$
+
+					Then	
+					$$\tilde{f}_k = (f_k +b_k)$$
+					with
+					$$
+					b_k(e_1,\dots,e_k) 
+					= - \varsigma(k+1)\iota_{v_\cdot} B
+					= - (-)^k \iota_{x_1}\dots\iota_{x_1} B
+					$$	
+
+
+\end{document}
+

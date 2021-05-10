@@ -1,0 +1,18 @@
+%+------------------------------------------------------------------------+
+%| Picture: Lie infinity Keywords cloud
+%| Author: Antonio miti
+%+------------------------------------------------------------------------+
+\documentclass[crop,tikz]{standalone}
+
+\begin{document}
+\begin{tikzpicture}[scale=1, every node/.style={scale=0.8}]
+	\draw (0,0) rectangle (20,10);
+  \draw (0,0) -- (20,10) -- (0,10) -- (20,0);
+  \draw[fill = red!30!white ] (10,5) ellipse (5 and 2);
+  \node[] at (10,5) {$L_\infty$-algebras};
+  \node[ align=center] at (10,8.5) {Multibrackets \\"hands-on approach"};  
+  \node[align=center] at (10,1.5) {Graded Manifolds \&\\ Cohomological vector fields};  
+  \node[rotate=90] at (2.5,5) {Operads};
+  \node[rotate=-90, align=center] at (17.5,5) {Coalgebras \&\\ Codifferentials};        
+\end{tikzpicture}
+\end{document}

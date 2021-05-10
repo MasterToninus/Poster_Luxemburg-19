@@ -1,0 +1,52 @@
+%+------------------------------------------------------------------------+
+%| Diagram: Kiddo Diagram - k-plectic case
+%| Author: Antonio miti
+%| Credit: https://tex.stackexchange.com/questions/256835/tikz-cd-shade-faces-of-commutative-cube
+%|					(using Aliases)
+%+------------------------------------------------------------------------+
+
+
+\documentclass[border=5pt, tikz]{standalone}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric,fit}
+\tikzset{
+   dashsquare/.style={rectangle,draw,dashed,inner sep=0pt,blue,fit={#1}}
+}
+
+
+\begin{document}
+	\begin{tikzcd}[
+   execute at end picture={
+     \node[label=below:{n-plectic Mfds.},dashsquare=(L1)(L2)]{};
+     \node[label=below:{Higher Courant Algebroids %\newline(aka Vinogradov)
+     },dashsquare=(R1)(R2)]{};
+     \node[label=below:{Lie-n-Algebras},dashsquare=(C1)(C2)]{};
+		}]
+		|[alias=L1]|(M,\omega) \ar[rrrr,rightsquigarrow,"\text{twisted standard Vinogradov algebroid}"]
+		\ar[dddd,rightsquigarrow,"\text{gauge transf.}"',sloped]
+		\ar[drr,rightsquigarrow,"\text{observables}",sloped] & & & & 
+		|[alias=R1]|(TM\oplus\Lambda^{n-1}T^\ast M,\rho,\langle\cdot,\cdot\rangle,[\cdot,\cdot]_\omega) 
+		\ar[dl,rightsquigarrow]
+		\ar[dddd,"\text{B-transf.}",sloped]
+		\\
+		& \phantom{\big(}& L_{\infty}(M,\omega)\ar[r,"\Psi"]& 
+		|[alias=C2]|L_{\infty}\big(\mathcal{V}_n, \mu_k \big) \ar[dd,"\tau_B"]& 
+		\\
+		&\mathfrak{g} \ar[ur,"(f)"]\ar[dr,"(\tilde{f})"']& & & 
+		\\
+		& &L_{\infty}(M,\tilde{\omega})\ar[r,"\Psi"]
+		& 
+		L_{\infty}\big(\mathcal{V}_n, \tilde{\mu_k} \big)&
+		\\
+		|[alias=L2]|(M,\tilde{\omega}) \ar[rrrr,rightsquigarrow,"\text{ }"]
+		\ar[urr,rightsquigarrow,"\text{observables}",sloped] & 
+		|[alias=C1]|\phantom{\big(} & & & 
+		|[alias=R2]|(TM\oplus\Lambda^{n-1}T^\ast M,\rho,\langle\cdot,\cdot\rangle,[\cdot,\cdot]_{\tilde{\omega}}) 
+		\ar[ul,rightsquigarrow] 
+ 	\end{tikzcd}	
+\end{document}
+
+	
